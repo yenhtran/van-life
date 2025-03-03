@@ -246,6 +246,22 @@ footer {
 .van-type.luxury.selected {
   background-color: #161616;
 }
+.van-type.clear-filters {
+  margin-left: -20px;
+  height: 34px;
+  padding: 6px 26px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  text-decoration: underline;
+  background-color: transparent;
+  color: #4D4D4D;
+}
+
+i[class*='van-type-'] {
+  padding: 7px 14px;
+}
 .van-details-container {
   padding: 27px;
 }
