@@ -193,6 +193,7 @@ footer {
 .van-list-filter-buttons>a {
   margin-right: 15px;
 }
+
 .van-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
