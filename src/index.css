@@ -139,6 +139,15 @@ footer {
   transform: translate(1px, 1px);
 }
 
+.not-found-container {
+  padding-inline: 26px;
+}
+
+.not-found-container .link-button {
+  width: 100%;
+  background-color: #161616;
+  color: white;
+}
 /*** ABOUT PAGE ***/
 .about-hero-image {
   width: 100vw;
