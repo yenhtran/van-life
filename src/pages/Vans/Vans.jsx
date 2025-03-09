@@ -6,14 +6,20 @@ export default function Vans() {
   const [vans, setVans] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null)
   const typeFilter = searchParams.get('type');
 
   useEffect(() => {
     (async () => {
       setLoading(true)
-      const data = await getVans();
-      setVans(data)
-      setLoading(false)
+      try {
+        const data = await getVans();
+        setVans(data)
+      } catch (err) {
+          setError(err)
+      } finally {
+        setLoading(false)
+      }
     })()
   }, [])
 
@@ -46,7 +52,11 @@ function handleFilterChange(key, value) {
 }
 
 if (loading) {
-  return <h1>Loading...</h1>
+  return <h1 aria-live="polite">Loading...</h1>
+}
+
+if (error) {
+  return <h1 aria-live="assertive">This was an error: {error.message}</h1>
 }
 
   return (
