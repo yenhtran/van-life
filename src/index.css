@@ -244,6 +244,9 @@ footer {
   color: white;
   font-family: 'Inter', sans-serif;
 }
+.login-first {
+  color: red;
+}
 /*** VAN PAGES ***/
 .van-list-container {
   padding-inline: 23px;
