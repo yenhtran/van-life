@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { loginUser } from '../api'
 
 export default function Login() {
@@ -7,6 +7,7 @@ export default function Login() {
   const [status, setStatus] = useState('idle');
   const [error, setError] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
 
   async function handleSubmit(e) {
@@ -16,6 +17,7 @@ export default function Login() {
     try {
       data = await loginUser(loginFormData)
       setError(null)
+      navigate('/host')
     } catch (err) {
       console.log(err)
       setError(err)
