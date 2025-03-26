@@ -8,6 +8,7 @@ export default function Login() {
   const [error, setError] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
+  const fromLastLocation = location?.state?.from || '/host'
 
 
   async function handleSubmit(e) {
@@ -17,7 +18,8 @@ export default function Login() {
     try {
       data = await loginUser(loginFormData)
       setError(null)
-      navigate('/host')
+      localStorage.setItem('loggedin', true)
+      navigate(fromLastLocation, { replace: true })
     } catch (err) {
       console.log(err)
       setError(err)
