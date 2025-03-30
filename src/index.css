@@ -383,6 +383,7 @@ i[class*='van-type-'] {
 }
 .host-nav {
   display: flex;
+  margin-bottom: 30px;
 }
 
 .host-nav a {
